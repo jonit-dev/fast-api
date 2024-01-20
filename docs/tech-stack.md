@@ -69,6 +69,8 @@ The goal of the selected dependencies below is to create a smooth and blazing fa
 
 - **Winston** (`winston`)
   - A versatile logging library.
+- **Morgan** (`morgan`)
+  - HTTP request logger middleware for Node.js.
 
 ### Environment Variables
 
