@@ -4,6 +4,7 @@ import "reflect-metadata"; //! THIS IMPORT MUST ALWAYS COME FIRST. BEWARE VSCODE
 
 import cors from "cors";
 import express from "express";
+import rateLimit from "express-rate-limit";
 import helmet from "helmet";
 import { getRouteInfo, InversifyExpressServer } from "inversify-express-utils";
 import morgan from "morgan";
@@ -17,6 +18,12 @@ const startTime = Date.now();
 
 const server = new InversifyExpressServer(container);
 
+const limiter = rateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // limit each IP to 100 requests per windowMs
+  message: "Too many requests from this IP, please try again after 15 minutes",
+});
+
 server.setConfig((app) => {
   // Middlewares ========================================
   app.use(cors());
@@ -24,6 +31,7 @@ server.setConfig((app) => {
   app.use(express.json());
   app.use(morgan("dev"));
   app.use(express.static("public"));
+  app.use(limiter);
 });
 
 const app = server.build();
