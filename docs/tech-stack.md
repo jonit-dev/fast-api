@@ -14,6 +14,13 @@ The goal of the selected dependencies below is to create a smooth and blazing fa
 - **esbuild** (`esbuild`)
   - Fast bundler and minifier, significantly improves build times.
 
+### Code Architecture
+
+- **Inversify** (`inversify`)
+  - A powerful and lightweight inversion of control container for JavaScript & Node.js apps powered by TypeScript.
+- **Inversify Express Utils** (`inversify-express-utils`)
+  - A library that helps you write modular, testable and maintainable code with InversifyJS and Express.
+
 ### Code Quality
 
 - **ESLint** (`eslint`)
@@ -38,7 +45,11 @@ The goal of the selected dependencies below is to create a smooth and blazing fa
 ### Testing Framework
 
 - **Vitest** (`vitest`)
+
   - Fast unit testing framework, well-suited for modern JavaScript applications.
+
+- **Supertest** (`supertest`)
+  - HTTP assertions made easy.
 
 ### Security
 
@@ -77,6 +88,7 @@ The goal of the selected dependencies below is to create a smooth and blazing fa
 ## Other
 
 - **Swagger** (`swagger`)
+
   - API documentation tool.
 
 - **New Relic** (`newrelic`)
