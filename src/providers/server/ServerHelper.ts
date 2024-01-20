@@ -5,10 +5,13 @@ import { ConsoleHelper } from "./ConsoleHelper";
 export class ServerHelper {
   constructor(private consoleHelper: ConsoleHelper) {}
 
-  public showBootstrapMessage(config: { env: string; port: number }): void {
-    const { port, env } = config;
+  public showBootstrapMessage(config: { env: string; port: number; startTimeMs: number }): void {
+    const { port, env, startTimeMs } = config;
 
-    this.consoleHelper.coloredLog(`⚙️  Server running on ${env} mode, listening on port ${port}`, "YELLOW");
+    this.consoleHelper.coloredLog(
+      `⚙️  Server running: ${env} | Port ${port} | Bootstrap time: ${startTimeMs}ms`,
+      "YELLOW"
+    );
   }
 
   public async sleep(ms): Promise<void> {

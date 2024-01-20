@@ -11,8 +11,6 @@ The goal of the selected dependencies below is to create a smooth and blazing fa
 
 - **ts-node-dev** (`ts-node-dev`)
   - Efficient TypeScript execution and reloading.
-- **esbuild** (`esbuild`)
-  - Fast bundler and minifier, significantly improves build times.
 
 ### Code Architecture
 
