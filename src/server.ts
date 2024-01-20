@@ -4,10 +4,10 @@ import "reflect-metadata"; //! THIS IMPORT MUST ALWAYS COME FIRST. BEWARE VSCODE
 
 import cors from "cors";
 import express from "express";
+import helmet from "helmet";
 import { getRouteInfo, InversifyExpressServer } from "inversify-express-utils";
 import morgan from "morgan";
 import * as prettyjson from "prettyjson";
-
 import { container, loggerManager, serverHelper } from "./providers/inversify/container";
 import { errorHandlerMiddleware } from "./providers/middlewares/ErrorHandlerMiddleware";
 
@@ -20,6 +20,7 @@ const server = new InversifyExpressServer(container);
 server.setConfig((app) => {
   // Middlewares ========================================
   app.use(cors());
+  app.use(helmet());
   app.use(express.json());
   app.use(morgan("dev"));
   app.use(express.static("public"));
