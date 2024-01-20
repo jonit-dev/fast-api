@@ -13,3 +13,9 @@ export enum HttpStatus {
   InternalServerError = 500,
   ServiceUnavailable = 503,
 }
+
+export enum EnvType {
+  Development = "development",
+  Production = "production",
+  Test = "test",
+}

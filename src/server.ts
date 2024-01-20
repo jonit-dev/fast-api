@@ -7,7 +7,8 @@ import express from "express";
 import { getRouteInfo, InversifyExpressServer } from "inversify-express-utils";
 import morgan from "morgan";
 import * as prettyjson from "prettyjson";
-import { container, serverHelper } from "./providers/inversify/container";
+
+import { container, loggerManager, serverHelper } from "./providers/inversify/container";
 import { errorHandlerMiddleware } from "./providers/middlewares/ErrorHandlerMiddleware";
 
 const port = process.env.PORT || 5000;
@@ -30,6 +31,8 @@ app.listen(port, () => {
   const elapsedTime = endTime - startTime;
 
   serverHelper.showBootstrapMessage({ env: process.env.ENV, port: Number(port), startTimeMs: elapsedTime });
+
+  loggerManager.setupLogger();
 });
 
 if (process.argv.includes("--show-routes")) {

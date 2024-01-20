@@ -83,6 +83,12 @@
       "body": "new post body",
       "tags": ["tag1", "tag2"],
       "id": "d01bf060-9ad5-435d-bacb-71d3848a08e4"
+    },
+    {
+      "title": "new post",
+      "body": "new post body",
+      "tags": ["tag1", "tag2"],
+      "id": "29083990-0333-478e-aff3-8bfda153f218"
     }
   ]
 }
