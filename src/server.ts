@@ -50,3 +50,5 @@ if (process.argv.includes("--show-routes")) {
 }
 
 app.use(errorHandlerMiddleware); //! This must come last, otherwise it fails to catch errors thrown
+
+export { app };

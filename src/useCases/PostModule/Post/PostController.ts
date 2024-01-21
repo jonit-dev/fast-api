@@ -34,8 +34,6 @@ export class PostController implements interfaces.Controller {
 
   @httpGet("/", mongooseQueryParserMiddleware)
   private async readAll(@request() req: Request, @response() res: Response): Promise<IPost[]> {
-    console.log("all posts");
-
     return await this.database.readAll("posts", req.query);
   }
 
