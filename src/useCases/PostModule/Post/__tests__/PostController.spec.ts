@@ -1,12 +1,9 @@
-import { appEnv } from "@constants/appEnv";
 import { API_REQUEST } from "@constants/axiosConstants";
 import { describe, expect, it } from "vitest";
 import { createPostMock, readAllPostsMock } from "./PostControllerMocks";
 
 describe("PostController", () => {
   it("fetch available users", async () => {
-    console.log("appEnv.general.apiURL", appEnv.general.apiURL);
-
     const response = await API_REQUEST.get("/posts");
 
     const posts = response.data;
